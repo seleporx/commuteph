@@ -1,3 +1,13 @@
+grails {
+	redis {
+		// redis-cli -h crestfish.redistogo.com -p 9024
+		port = 9024
+		host = "crestfish.redistogo.com"
+		timeout = 2000 //default in milliseconds
+		password = "295af52aa1fd61378b1a479f2b9f8e08" //defaults to no password
+	}
+}
+
 // locations to search for config files that get merged into the main config;
 // config files can be ConfigSlurper scripts, Java properties files, or classes
 // in the classpath in ConfigSlurper format

@@ -1,8 +1,9 @@
 package org.commuteph.frontend.controllers
 
-class IndexController {
-
+class IndexController extends BaseController {
+	def beforeInterceptor = loadPlaces()
+	
     def index() {
-		
+		render view: '/index'
 	}
 }

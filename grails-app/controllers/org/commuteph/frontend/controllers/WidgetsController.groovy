@@ -58,4 +58,24 @@ class WidgetsController {
 			return
 		}
 	}
+	
+	def missing() {
+		def missing = []
+		def http = new HTTPBuilder('http://commuteph-api.herokuapp.com/')
+
+		http.get(path : '/routes/missing/', contentType : TEXT) { resp, reader ->
+			JSON.parse(reader.text).each {
+				pop ->
+				missing.add([location: pop.location, destination: pop.destination])
+			}
+		}
+		
+		if(params.int('id') == 1) {
+			render view: 'sidebar_missing', model: [missing: missing]
+			return
+		}
+		
+		render view: 'home_missing', model: [missing: missing]
+		return
+	}
 }

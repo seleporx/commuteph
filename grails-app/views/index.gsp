@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div class="row">
-		<div class="large-9 push-3 columns">
+		<div class="large-9 push-3 columns main">
 			<section class="intro-content">
 				<div class="intro-image">
 					<img src="img/homepage-jeep.svg"
@@ -20,49 +20,23 @@
 					shared by people who commute themselves to help others in the
 					struggle of going around Manila.</p>
 			</section>
-			<div class="panel home">
-				<h3>Help us add Directions</h3>
-				<section class="desc">These are some routes that need
-					directions. Maybe if you know the way, you can add it to our
-					database!</section>
-				<ul class="home-nav">
-					<li><a href="#">Katipunan Station (LRT2) to Eastwood City</a></li>
-					<li><a href="#">McKinley Hill to Crossing Station</a></li>
-					<li><a href="#">masinag to kingsville</a></li>
-					<li><a href="#">Katipunan Station (LRT2) to Eastwood City</a></li>
-					<li><a href="#">McKinley Hill to Crossing Station</a></li>
-					<li><a href="#">Katipunan Station (LRT2) to Eastwood City</a></li>
-					<li><a href="#">McKinley Hill to Crossing Station</a></li>
-					<li><a href="#">masinag to kingsville</a></li>
-					<li><a href="#">Katipunan Station (LRT2) to Eastwood City</a></li>
-					<li><a href="#">McKinley Hill to Crossing Station</a></li>
-				</ul>
-			</div>
-			<a href="browse-missing.php" class="button secondary right">View
-				more rotues that need directions</a>
 		</div>
-		<div class="large-3 pull-9 columns">
-			<div class="panel">
-				<h3>Popular Routes</h3>
-				<ul class="side-nav">
-					<li><a href="#">Katipunan Station (LRT2) to Eastwood City</a></li>
-					<li><a href="#">McKinley Hill to Crossing Station</a></li>
-					<li><a href="#">masinag to kingsville</a></li>
-					<li><a href="#">Katipunan Station (LRT2) to Eastwood City</a></li>
-					<li><a href="#">McKinley Hill to Crossing Station</a></li>
-				</ul>
-			</div>
-			<div class="panel">
-				<h3>Recently Added</h3>
-				<ul class="side-nav">
-					<li><a href="#">Katipunan Station (LRT2) to Eastwood City</a></li>
-					<li><a href="#">McKinley Hill to Crossing Station</a></li>
-					<li><a href="#">masinag to kingsville</a></li>
-					<li><a href="#">Katipunan Station (LRT2) to Eastwood City</a></li>
-					<li><a href="#">McKinley Hill to Crossing Station</a></li>
-				</ul>
-			</div>
+		<div class="large-3 pull-9 columns sidebar">
 		</div>
 	</div>
+	
+	<script>
+	$.get('${createLink(controller: 'widgets', action: 'missing', id: '2')}', function(data) {
+		$('.main').append(data);
+	});
+	
+	$.get('${createLink(controller: 'widgets', action: 'popular', id: '1')}', function(data) {
+		$('.sidebar').append(data);
+	});
+
+	$.get('${createLink(controller: 'widgets', action: 'recent', id: '1')}', function(data) {
+		$('.sidebar').append(data);
+	});
+	</script>
 </body>
 </html>

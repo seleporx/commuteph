@@ -29,7 +29,7 @@
 	<header id="main-header">
 		<div class="row">
 			<div class="large-3 columns">
-				<h1 class="title logo">Commute.ph</h1>
+				<g:link uri="/"><h1 class="title logo">Commute.ph</h1></g:link>
 
 				<div class="button-bar">
 					<ul class="button-group">
@@ -41,7 +41,7 @@
 
 			</div>
 			<div class="large-9 columns header-search">
-				<g:form name="searchForm" controller="routes" action="search">
+				<g:form name="searchForm" controller="routes" action="r" method="POST">
 					<div class="row">
 						<div class="small-12 large-9 columns">
 							<div class="row">
@@ -50,7 +50,7 @@
 										commute from</label>
 								</div>
 								<div class="small-8 large-6 columns">
-									<input type="text" id="right-label" placeholder="Point A" name="location">
+									<input type='hidden' id='right-label' name="location" class="select2" style="width:260px;" />
 								</div>
 							</div>
 							<div class="row">
@@ -58,7 +58,7 @@
 									<label for="right-label" class="right inline">to</label>
 								</div>
 								<div class="small-8 large-6 columns">
-									<input type="text" id="right-label" placeholder="Point B" name="destination">
+									<input type='hidden' id='right-label' name="destination" class="select2" style="width:260px;" />
 								</div>
 							</div>
 						</div>
@@ -181,10 +181,20 @@
 	<g:javascript src="foundation/foundation.tooltips.js"></g:javascript>
 
 	<g:javascript src="foundation/foundation.topbar.js"></g:javascript>
+	
+	<g:javascript src="vendor/select2.js"></g:javascript>
 
 
 	<script>
 		$(document).foundation();
+
+		$(document).ready(function() {
+			$(".select2").select2({
+				createSearchChoice:function(term, data) { if ($(data).filter(function() { return this.text.localeCompare(term)===0; }).length===0) {return {id:term, text:term};} },
+				multiple: false,
+				data: ${session.places}
+				});
+			});
 	</script>
 
 		</body>

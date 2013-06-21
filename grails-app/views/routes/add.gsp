@@ -74,11 +74,14 @@
 			</section>
 		</div>
 		<div class="large-3 columns sidebar">
-			<g:render template="/templates/sidebar_needroutes" />
 		</div>
 	</div>
 
 	<script>
+		$.get('${createLink(controller: 'widgets', action: 'missing', id: '1')}', function(data) {
+			$('.sidebar').append(data);
+		});
+	
 		$.get('${createLink(controller: 'widgets', action: 'recent', id: '1')}', function(data) {
 			$('.sidebar').append(data);
 		});

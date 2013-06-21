@@ -4,7 +4,8 @@ import groovyx.net.http.HTTPBuilder
 import static groovyx.net.http.ContentType.URLENC
 import grails.converters.JSON
 
-class RoutesController {
+class RoutesController extends BaseController {
+	def beforeInterceptor = loadPlaces()
 
 	def add() {
 		if(request.method == 'POST') {
@@ -39,6 +40,9 @@ class RoutesController {
 	}
 
 	def search() {
+		if(params.location == '' || params.destination == '')
+			redirect controller: 'index'
+		
 		def http = new HTTPBuilder('http://commuteph-api.herokuapp.com/')
 		def postParams = [location: params.location, destination: params.destination]
 		def location = params.location
@@ -62,5 +66,9 @@ class RoutesController {
 
 			render view: 'search', model: [location: location, destination: destination, routes: routes]
 		}
+	}
+	
+	def r() {
+		redirect action: 'search', params: [location: params.location, destination: params.destination], mapping: 'searchMap'
 	}
 }
