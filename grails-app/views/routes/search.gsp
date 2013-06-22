@@ -111,7 +111,7 @@
 					</section>
 				</g:each>
 
-				<g:link controller="routes" action="add"
+				<g:link controller="routes" action="a"
 					params="[location: location, destination: destination]"
 					class="button expand">
 					<span class="desc">Have a better route in mind?</span>

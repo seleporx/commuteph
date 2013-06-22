@@ -32,7 +32,7 @@ class WidgetsController {
 		http.get(path : '/routes/recent/', contentType : TEXT) { resp, reader ->
 			JSON.parse(reader.text).each {
 				pop ->
-				recent.add([location: pop.location, destination: pop.destination])
+				recent.add([location: pop.location, destination: pop.destination, routeId: pop.routeId])
 			}
 		}
 		
@@ -49,7 +49,7 @@ class WidgetsController {
 		http.get(path : '/routes/popular/', contentType : TEXT) { resp, reader ->
 			JSON.parse(reader.text).each {
 				pop ->
-				popular.add([location: pop.location, destination: pop.destination])
+				popular.add([location: pop.location, destination: pop.destination, routeId: pop.routeId])
 			}
 		}
 		
