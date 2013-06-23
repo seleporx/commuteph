@@ -7,7 +7,9 @@
 			<label for="mrt-bound" class="inline">MRT bound to*</label>
 		</div>
 		<div class="small-12 large-8 columns">
-			<input type="text" id="mrt-bound" name="bound:${params.id}" placeholder="last station">
+<%--			<input type="text" id="mrt-bound" name="bound:${params.id}" placeholder="last station">--%>
+			<input type='hidden' id='mrt-bound' name="bound:${params.id}"
+				class="select2add" style="width: 260px;" />
 		</div>
 		<div class="small-12 columns">
 			<p>
@@ -21,8 +23,10 @@
 			<label for="mrt-alight" class="inline">alight at*</label>
 		</div>
 		<div class="small-12 large-8 columns">
-			<input type="text" id="mrt-alight" name="destination:${params.id}"
-				placeholder="which station to alight">
+<%--			<input type="text" id="mrt-alight" name="destination:${params.id}"--%>
+<%--				placeholder="which station to alight">--%>
+				<input type='hidden' id='mrt-alight' name="destination:${params.id}"
+				class="select2add" style="width: 260px;" />
 		</div>
 		<div class="small-12 columns">
 			<p>

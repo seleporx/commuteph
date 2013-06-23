@@ -7,7 +7,9 @@
 			<label for="jeep-to" class="inline">Jeep to</label>
 		</div>
 		<div class="small-12 large-9 columns">
-			<input type="text" id="jeep-to" name="destination:${params.id}" placeholder="your destination">
+<%--			<input type="text" id="jeep-to" name="destination:${params.id}" placeholder="your destination">--%>
+			<input type='hidden' id='jeep-to' name="destination:${params.id}"
+				class="select2add" style="width: 260px;" />
 		</div>
 	</div>
 	<div class="row">
@@ -15,8 +17,10 @@
 			<label for="jeep-bound" class="inline">bound to *</label>
 		</div>
 		<div class="small-12 large-9 columns">
-			<input type="text" id="jeep-bound" name="bound:${params.id}"
-				placeholder="sign on jeep to where it's going">
+<%--			<input type="text" id="jeep-bound" name="bound:${params.id}"--%>
+<%--				placeholder="sign on jeep to where it's going">--%>
+				<input type='hidden' id='jeep-bound' name="bound:${params.id}"
+				class="select2add" style="width: 260px;" />
 		</div>
 	</div>
 	<p>

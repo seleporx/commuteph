@@ -1,7 +1,7 @@
 package org.commuteph.frontend.controllers
 
 import groovyx.net.http.HTTPBuilder
-import static groovyx.net.http.ContentType.URLENC
+import static groovyx.net.http.ContentType.*
 import grails.converters.JSON
 
 class RoutesController extends BaseController {
@@ -107,22 +107,32 @@ class RoutesController extends BaseController {
 		}
 	}
 
-	def d() {
-		if(params.location == '' || params.destination == '' || params.routeId == null) {
-			redirect controller: 'index'
-			return
+	def browse() {
+		def recent = []
+		def http = new HTTPBuilder('http://commuteph-api.herokuapp.com/')
+
+		http.get(path : '/routes/recent/', query: [max: 20], contentType : TEXT) { resp, reader ->
+			JSON.parse(reader.text).each { pop ->
+				recent.add([location: pop.location, destination: pop.destination, routeId: pop.routeId])
+			}
 		}
 
-		redirect action: 'add', params: [location: params.location.replace(' ', '-'), destination: params.destination.replace(' ', '-'), routeId: params.routeId], mapping: 'dirMap'
+		render view: 'browse', model: [recent: recent]
+		return
 	}
 
-	def a() {
-		if(params.location == '' || params.destination == '') {
-			redirect controller: 'index'
-			return
+	def needed() {
+		def missing = []
+		def http = new HTTPBuilder('http://commuteph-api.herokuapp.com/')
+
+		http.get(path : '/routes/missing/', query: [max: 20], contentType : TEXT) { resp, reader ->
+			JSON.parse(reader.text).each { pop ->
+				missing.add([location: pop.location, destination: pop.destination])
+			}
 		}
 
-		redirect action: 'add', params: [location: params.location.replace(' ', '-'), destination: params.destination.replace(' ', '-')], mapping: 'addMap'
+		render view: 'needed', model: [missing: missing]
+		return
 	}
 
 	def r() {

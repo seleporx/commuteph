@@ -7,7 +7,9 @@
 			<label for="lrt-bound" class="inline">LRT bound to*</label>
 		</div>
 		<div class="small-12 large-8 columns">
-			<input type="text" id="lrt-bound" name="bound:${params.id}" placeholder="last station">
+<%--			<input type="text" id="lrt-bound" name="bound:${params.id}" placeholder="last station">--%>
+			<input type='hidden' id='lrt-bound' name="bound:${params.id}"
+				class="select2add" style="width: 260px;" />
 		</div>
 		<div class="small-12 columns">
 			<p>
@@ -21,8 +23,10 @@
 			<label for="lrt-alight" class="inline">alight at*</label>
 		</div>
 		<div class="small-12 large-8 columns">
-			<input type="text" id="lrt-alight" name="destination:${params.id}"
-				placeholder="which station to alight">
+<%--			<input type="text" id="lrt-alight" name="destination:${params.id}"--%>
+<%--				placeholder="which station to alight">--%>
+				<input type='hidden' id='lrt-alight' name="destination:${params.id}"
+				class="select2add" style="width: 260px;" />
 		</div>
 		<div class="small-12 columns">
 			<p>

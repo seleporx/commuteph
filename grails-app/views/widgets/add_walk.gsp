@@ -7,7 +7,9 @@
 			<label for="walk-to" class="inline">Walk to</label>
 		</div>
 		<div class="small-12 large-9 columns">
-			<input type="text" id="walk-to" name="destination:${params.id}" placeholder="your destination">
+<%--			<input type="text" id="walk-to" name="destination:${params.id}" placeholder="your destination">--%>
+			<input type='hidden' id='walk-to' name="destination:${params.id}"
+				class="select2add" style="width: 260px;" />
 		</div>
 	</div>
 

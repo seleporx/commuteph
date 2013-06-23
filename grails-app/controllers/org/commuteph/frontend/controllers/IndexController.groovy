@@ -6,4 +6,8 @@ class IndexController extends BaseController {
     def index() {
 		render view: '/index'
 	}
+	
+	def about() {
+		render view: '/about'
+	}
 }

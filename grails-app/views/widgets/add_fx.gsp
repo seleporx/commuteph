@@ -7,7 +7,9 @@
 			<label for="fx-to" class="inline">FX to</label>
 		</div>
 		<div class="small-12 large-9 columns">
-			<input type="text" id="fx-to" name="destination:${params.id}" placeholder="your destination">
+<%--			<input type="text" id="fx-to" name="destination:${params.id}" placeholder="your destination">--%>
+			<input type='hidden' id='fx-to' name="destination:${params.id}"
+				class="select2add" style="width: 260px;" />
 		</div>
 	</div>
 	<div class="row">
@@ -15,8 +17,10 @@
 			<label for="fx-bound" class="inline">bound to *</label>
 		</div>
 		<div class="small-12 large-9 columns">
-			<input type="text" id="fx-bound" name="bound:${params.id}"
-				placeholder="sign on FX to where it's going">
+<%--			<input type="text" id="fx-bound" name="bound:${params.id}"--%>
+<%--				placeholder="sign on FX to where it's going">--%>
+				<input type='hidden' id='fx-bound' name="bound:${params.id}"
+				class="select2add" style="width: 260px;" />
 		</div>
 	</div>
 	<p>

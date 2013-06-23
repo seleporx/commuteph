@@ -33,9 +33,9 @@
 
 				<div class="button-bar">
 					<ul class="button-group">
-						<li><a href="browse.php" class="small button secondary">Browse</a></li>
-						<li><a href="add-route-blank.php"
-							class="small button secondary">Add a Route</a></li>
+						<li><g:link controller="routes" action="browse" class="small button secondary">Browse</g:link></li>
+						<li><g:link controller="routes" action="needed"
+							class="small button secondary">Add a Route</g:link></li>
 					</ul>
 				</div>
 
@@ -87,9 +87,9 @@
 			</div>
 			<div class="small-12 large-4 columns">
 				<ul>
-					<li><a href="about.php">About Us</a></li>
+					<li><g:link controller="index" action="about">About Us</g:link></li>
 					<li><a href="http://blog.commute.ph">Blog</a></li>
-					<li><a href="#" data-reveal-id="sendFeedback">Send Us
+					<li><a href="#" data-reveal-id="contactUs">Send Us
 							Feedback</a></li>
 				</ul>
 			</div>
@@ -115,11 +115,11 @@
 		<div class="row">
 			<div class="small-12 columns">
 				<ul class="inline-list">
-					<li><a href="browse.php">Browse Directions</a></li>
-					<li><a href="browse-missing.php">Routes that Need
-							Directions</a></li>
-					<li><a href="add-route-blank.php">Add Directions</a></li>
-					<li><a href="contribute.php">Contribute</a></li>
+					<li><g:link controller="routes" action="browse">Browse Directions</g:link></li>
+					<li><g:link controller="routes" action="needed">Routes that Need
+							Directions</g:link></li>
+<%--					<li><a href="add-route-blank.php">Add Directions</a></li>--%>
+<%--					<li><a href="contribute.php">Contribute</a></li>--%>
 					<li><a href="#" data-reveal-id="contactUs">Contact Us</a></li>
 				</ul>
 			</div>
@@ -142,7 +142,7 @@
 			<li><a href="http://twitter.com/CommutePH" target="_blank">sending
 					a Direct Message on Twitter</a></li>
 		</ul>
-		or you can also send us an email at: ____
+		or you can also send us an email at: <a href="mailto:jolo@commute.ph">jolo@commute.ph</a>
 		</p>
 	</div>
 	
