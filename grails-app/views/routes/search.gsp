@@ -111,16 +111,15 @@
 					</section>
 				</g:each>
 
-				<g:link controller="routes" action="a"
-					params="[location: location, destination: destination]"
+				<g:link mapping="addMap"
+					params="[location: location.replace(' ', '-'), destination: destination.replace(' ', '-')]"
 					class="button expand">
 					<span class="desc">Have a better route in mind?</span>
 					<span class="action">Add Directions</span>
 				</g:link>
 			</section>
 		</div>
-		<div class="large-3 columns sidebar">
-		</div>
+		<div class="large-3 columns sidebar"></div>
 	</div>
 
 	<script>
