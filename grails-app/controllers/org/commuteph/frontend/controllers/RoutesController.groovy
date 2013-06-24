@@ -103,7 +103,7 @@ class RoutesController extends BaseController {
 				mode: path.mode)
 			}
 
-			render view: 'direction', model: [location: location, destination: destination, paths: paths]
+			render view: 'direction', model: [location: location, destination: destination, paths: paths, routeId: routeId]
 		}
 	}
 

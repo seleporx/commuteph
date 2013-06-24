@@ -123,12 +123,6 @@
 				$('#pathCount').val(id);
 				
 				id++;
-
-				$(".select2add").select2({
-					createSearchChoice:function(term, data) { if ($(data).filter(function() { return this.text.localeCompare(term)===0; }).length===0) {return {id:term, text:term};} },
-					multiple: false,
-					data: ${session.places}
-					});
 			});
 
 			if ($('.button.save-directions').hasClass('hide')) {
