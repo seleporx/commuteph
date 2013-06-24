@@ -4,13 +4,14 @@
 <meta name="layout" content="main">
 
 <meta property="og:title"
-	content="Directions from ${location} to ${destination}." />
+	content="Directions from ${location} to ${destination}" />
 <meta property="og:type" content="website" />
 <meta property="og:url"
 	content="${createLink(absolute: true, mapping: 'dirMap', params: [location: location.replace(' ', '-'), destination: destination.replace(' ', '-'), routeId: routeId])}" />
 <meta property="og:site_name" content="Commute.ph" />
 <meta property="og:description"
 	content="Commute.ph is a crow-sourced commuting guide: directions are shared by people who commute themselves to help others in the struggle of going around Manila." />
+<meta property="og:image" content="${resource(dir: 'img', file: 'homepage-jeep.png', absolute: true)}" />
 
 <r:require module="commuteph" />
 <r:layoutResources />
