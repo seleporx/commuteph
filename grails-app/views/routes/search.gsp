@@ -23,29 +23,29 @@
 
 				<a name="form-top"></a>
 
-				<g:if test="${routes.size > 0}">
-					<div class="button-bar add-directions-buttons filter"
-						data-magellan-expedition="fixed">
-						<ul class="button-group">
-							<li class="desc"><a href="#" class="inline"
-								data-dropdown="copy-filter">Filter</a></li>
-							<li><a href="#form-top" class="small button add-walk">Walk</a></li>
-							<li><a href="#form-top" class="small button add-trike">Tricycle</a></li>
-							<li><a href="#form-top" class="small button add-jeep">Jeep</a></li>
-							<li><a href="#form-top" class="small button add-bus">Bus</a></li>
-							<li><a href="#form-top" class="small button add-fx">FX</a></li>
-							<li><a href="#form-top" class="small button add-mrt">MRT</a></li>
-							<li><a href="#form-top" class="small button add-lrt">LRT</a></li>
-							<li><a href="#form-top" class="small button add-lrt2">LRT2</a></li>
-						</ul>
-					</div>
-				</g:if>
-
-				<div id="copy-filter" class="f-dropdown content copy-info"
-					data-dropdown-content>
-					<p>Click on the buttons to show routes with your preferred mode
-						of transportation.</p>
-				</div>
+<%--				<g:if test="${routes.size > 0}">--%>
+<%--					<div class="button-bar add-directions-buttons filter"--%>
+<%--						data-magellan-expedition="fixed">--%>
+<%--						<ul class="button-group">--%>
+<%--							<li class="desc"><a href="#" class="inline"--%>
+<%--								data-dropdown="copy-filter">Filter</a></li>--%>
+<%--							<li><a href="#form-top" class="small button add-walk">Walk</a></li>--%>
+<%--							<li><a href="#form-top" class="small button add-trike">Tricycle</a></li>--%>
+<%--							<li><a href="#form-top" class="small button add-jeep">Jeep</a></li>--%>
+<%--							<li><a href="#form-top" class="small button add-bus">Bus</a></li>--%>
+<%--							<li><a href="#form-top" class="small button add-fx">FX</a></li>--%>
+<%--							<li><a href="#form-top" class="small button add-mrt">MRT</a></li>--%>
+<%--							<li><a href="#form-top" class="small button add-lrt">LRT</a></li>--%>
+<%--							<li><a href="#form-top" class="small button add-lrt2">LRT2</a></li>--%>
+<%--						</ul>--%>
+<%--					</div>--%>
+<%--				</g:if>--%>
+<%----%>
+<%--				<div id="copy-filter" class="f-dropdown content copy-info"--%>
+<%--					data-dropdown-content>--%>
+<%--					<p>Click on the buttons to show routes with your preferred mode--%>
+<%--						of transportation.</p>--%>
+<%--				</div>--%>
 
 				<g:each in="${routes}" status="i" var="route">
 					<section class="set-directions">
