@@ -9,7 +9,7 @@
 		<div class="small-12 large-9 columns">
 <%--			<input type="text" id="bus-to" name="destination:${params.id}" placeholder="your destination">--%>
 			<input type='hidden' id='bus-to' name="destination:${params.id}"
-				class="select2add" style="width: 260px;" />
+				class="select2bus" style="width: 260px;" />
 		</div>
 	</div>
 	<div class="row">
@@ -20,7 +20,7 @@
 <%--			<input type="text" id="bus-bound" name="bound:${params.id}"--%>
 <%--				placeholder="sign on bus to where it's going">--%>
 				<input type='hidden' id='bus-bound' name="bound:${params.id}"
-				class="select2add" style="width: 260px;" />
+				class="select2bus" style="width: 260px;" />
 		</div>
 	</div>
 	<p>
@@ -34,7 +34,7 @@
 
 <script>
 		$(document).ready(function() {
-			$(".select2add").select2({
+			$(".select2bus").select2({
 				createSearchChoice:function(term, data) { if ($(data).filter(function() { return this.text.localeCompare(term)===0; }).length===0) {return {id:term, text:term};} },
 				multiple: false,
 				data: ${session.places}

@@ -70,7 +70,7 @@ class RoutesController extends BaseController {
 					mode: path.mode)
 				}
 
-				routes.add(paths: paths)
+				routes.add(paths: paths, routeId: route.routeId)
 			}
 
 			render view: 'search', model: [location: location, destination: destination, routes: routes]

@@ -9,7 +9,7 @@
 <%--			<input type="text" id="alight-loc" name="destination:${params.id}"--%>
 <%--				placeholder="the place where you go down">--%>
 			<input type='hidden' id='alight-loc' name="destination:${params.id}"
-				class="select2add" style="width: 260px;" />
+				class="select2alight" style="width: 260px;" />
 		</div>
 	</div>
 	<div class="row">
@@ -21,7 +21,7 @@
 <%--			<input type="text" id="alight-landmark" name="bound:${params.id}"--%>
 <%--				placeholder="next to, in front of, or across something">--%>
 			<input type='hidden' id='alight-landmark' name="bound:${params.id}"
-				class="select2add" style="width: 260px;" />
+				class="select2alight" style="width: 260px;" />
 		</div>
 	</div>
 	<p>
@@ -35,12 +35,12 @@
 		href="#" class="delete-fieldset delete button small secondary right">&times;</a>
 </fieldset>
 
-<%--<script>--%>
-<%--		$(document).ready(function() {--%>
-<%--			$(".select2add").select2({--%>
-<%--				createSearchChoice:function(term, data) { if ($(data).filter(function() { return this.text.localeCompare(term)===0; }).length===0) {return {id:term, text:term};} },--%>
-<%--				multiple: false,--%>
-<%--				data: ${session.places}--%>
-<%--				});--%>
-<%--			});--%>
-<%--	</script>--%>
+<script>
+		$(document).ready(function() {
+			$(".select2alight").select2({
+				createSearchChoice:function(term, data) { if ($(data).filter(function() { return this.text.localeCompare(term)===0; }).length===0) {return {id:term, text:term};} },
+				multiple: false,
+				data: ${session.places}
+				});
+			});
+	</script>

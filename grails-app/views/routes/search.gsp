@@ -50,7 +50,8 @@
 				<g:each in="${routes}" status="i" var="route">
 					<section class="set-directions">
 						<h4>
-							<a href="page-route.php">From ${location} To ${destination}</a>
+							<g:link mapping="dirMap" params="[location: location.replace(' ', '-'), destination: destination.replace(' ', '-'), routeId: route.routeId]">
+							 ${location} To ${destination}</g:link>
 						</h4>
 						<div class="directions">
 							<ul class="list-directions">

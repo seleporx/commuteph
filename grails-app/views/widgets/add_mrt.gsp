@@ -9,7 +9,7 @@
 		<div class="small-12 large-8 columns">
 <%--			<input type="text" id="mrt-bound" name="bound:${params.id}" placeholder="last station">--%>
 			<input type='hidden' id='mrt-bound' name="bound:${params.id}"
-				class="select2add" style="width: 260px;" />
+				class="select2mrt" style="width: 260px;" />
 		</div>
 		<div class="small-12 columns">
 			<p>
@@ -26,7 +26,7 @@
 <%--			<input type="text" id="mrt-alight" name="destination:${params.id}"--%>
 <%--				placeholder="which station to alight">--%>
 				<input type='hidden' id='mrt-alight' name="destination:${params.id}"
-				class="select2add" style="width: 260px;" />
+				class="select2mrt" style="width: 260px;" />
 		</div>
 		<div class="small-12 columns">
 			<p>
@@ -42,7 +42,7 @@
 
 <script>
 		$(document).ready(function() {
-			$(".select2add").select2({
+			$(".select2mrt").select2({
 				createSearchChoice:function(term, data) { if ($(data).filter(function() { return this.text.localeCompare(term)===0; }).length===0) {return {id:term, text:term};} },
 				multiple: false,
 				data: ${session.places}
