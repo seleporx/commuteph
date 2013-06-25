@@ -29,19 +29,23 @@
 	<header id="main-header">
 		<div class="row">
 			<div class="large-3 columns">
-				<g:link uri="/"><h1 class="title logo">Commute.ph</h1></g:link>
+				<g:link uri="/">
+					<h1 class="title logo">Commute.ph</h1>
+				</g:link>
 
 				<div class="button-bar">
 					<ul class="button-group">
-						<li><g:link controller="routes" action="browse" class="small button secondary">Browse</g:link></li>
+						<li><g:link controller="routes" action="browse"
+								class="small button secondary">Browse</g:link></li>
 						<li><g:link controller="routes" action="needed"
-							class="small button secondary">Add a Route</g:link></li>
+								class="small button secondary">Add a Route</g:link></li>
 					</ul>
 				</div>
 
 			</div>
 			<div class="large-9 columns header-search">
-				<g:form name="searchForm" controller="routes" action="r" method="POST">
+				<g:form name="searchForm" controller="routes" action="r"
+					method="POST">
 					<div class="row">
 						<div class="small-12 large-9 columns">
 							<div class="row">
@@ -50,7 +54,8 @@
 										commute from</label>
 								</div>
 								<div class="small-8 large-6 columns">
-									<input type='hidden' id='right-label' name="location" class="select2" style="width:260px;" />
+									<input type='hidden' id='right-label' name="location"
+										class="select2" style="width: 260px;" />
 								</div>
 							</div>
 							<div class="row">
@@ -58,12 +63,14 @@
 									<label for="right-label" class="right inline">to</label>
 								</div>
 								<div class="small-8 large-6 columns">
-									<input type='hidden' id='right-label' name="destination" class="select2" style="width:260px;" />
+									<input type='hidden' id='right-label' name="destination"
+										class="select2" style="width: 260px;" />
 								</div>
 							</div>
 						</div>
 						<div class="small-12 large-3 columns">
-							<button type="submit" class="button expand">Get Directions</button>
+							<button type="submit" class="button expand">Get
+								Directions</button>
 						</div>
 					</div>
 				</g:form>
@@ -118,8 +125,8 @@
 					<li><g:link controller="routes" action="browse">Browse Directions</g:link></li>
 					<li><g:link controller="routes" action="needed">Routes that Need
 							Directions</g:link></li>
-<%--					<li><a href="add-route-blank.php">Add Directions</a></li>--%>
-<%--					<li><a href="contribute.php">Contribute</a></li>--%>
+					<%--					<li><a href="add-route-blank.php">Add Directions</a></li>--%>
+					<%--					<li><a href="contribute.php">Contribute</a></li>--%>
 					<li><a href="#" data-reveal-id="contactUs">Contact Us</a></li>
 				</ul>
 			</div>
@@ -135,7 +142,6 @@
 		<h2>Contact Us</h2>
 
 		<p>You can contact us through these channels:
-		
 		<ul>
 			<li><a href="https://www.facebook.com/Commute.PH"
 				target="_blank">sending us a message on Facebook</a></li>
@@ -145,14 +151,14 @@
 		or you can also send us an email at: <a href="mailto:jolo@commute.ph">jolo@commute.ph</a>
 		</p>
 	</div>
-	
+
 	<script>
 		document.write('<script src='
 				+ ('__proto__' in {} ? '${resource(dir: 'js/vendor', file: 'zepto')}' : '${resource(dir: 'js/vendor', file: 'jquery')}')
 				+ '.js><\/script>')
 	</script>
 
-			<g:javascript src="foundation/foundation.js"></g:javascript>
+	<g:javascript src="foundation/foundation.js"></g:javascript>
 
 	<g:javascript src="foundation/foundation.alerts.js"></g:javascript>
 
@@ -181,7 +187,7 @@
 	<g:javascript src="foundation/foundation.tooltips.js"></g:javascript>
 
 	<g:javascript src="foundation/foundation.topbar.js"></g:javascript>
-	
+
 	<g:javascript src="vendor/select2.js"></g:javascript>
 
 
@@ -197,5 +203,19 @@
 			});
 	</script>
 
-		</body>
+</body>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32341308-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 </html>
