@@ -37,7 +37,7 @@ class RoutesController extends BaseController {
 				return
 			}
 
-			def http = new HTTPBuilder('http://commuteph-api.herokuapp.com/')
+			def http = new HTTPBuilder('http://api.commute.ph/')
 			def postParams = [location: location,
 				destination: destination,
 				path: paths as JSON]
@@ -52,7 +52,7 @@ class RoutesController extends BaseController {
 			return
 		}
 
-		def http = new HTTPBuilder('http://commuteph-api.herokuapp.com/')
+		def http = new HTTPBuilder('http://api.commute.ph/')
 		def location = params.location.replace('-', ' ')
 		def destination = params.destination.replace('-', ' ')
 		def postParams = [location: location, destination: destination]
@@ -87,7 +87,7 @@ class RoutesController extends BaseController {
 		def destination = params.destination.replace('-', ' ')
 		def routeId = params.int('routeId')
 
-		def http = new HTTPBuilder('http://commuteph-api.herokuapp.com/')
+		def http = new HTTPBuilder('http://api.commute.ph/')
 		def postParams = [location: location, destination: destination, routeId: routeId]
 
 		http.post(path: '/routes/getDirection/', body: postParams, requestContentType: URLENC) { resp, json ->
@@ -109,7 +109,7 @@ class RoutesController extends BaseController {
 
 	def browse() {
 		def recent = []
-		def http = new HTTPBuilder('http://commuteph-api.herokuapp.com/')
+		def http = new HTTPBuilder('http://api.commute.ph/')
 
 		http.get(path : '/routes/recent/', query: [max: 20], contentType : TEXT) { resp, reader ->
 			JSON.parse(reader.text).each { pop ->
@@ -123,7 +123,7 @@ class RoutesController extends BaseController {
 
 	def needed() {
 		def missing = []
-		def http = new HTTPBuilder('http://commuteph-api.herokuapp.com/')
+		def http = new HTTPBuilder('http://api.commute.ph/')
 
 		http.get(path : '/routes/missing/', query: [max: 20], contentType : TEXT) { resp, reader ->
 			JSON.parse(reader.text).each { pop ->
