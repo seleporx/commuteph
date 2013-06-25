@@ -27,7 +27,7 @@ class WidgetsController {
 	
 	def recent() {
 		def recent = []
-		def http = new HTTPBuilder('http://commuteph-api.herokuapp.com/')
+		def http = new HTTPBuilder('http://api.commute.ph/')
 		
 		http.get(path : '/routes/recent/', contentType : TEXT) { resp, reader ->
 			JSON.parse(reader.text).each {
@@ -44,7 +44,7 @@ class WidgetsController {
 
 	def popular() {
 		def popular = []
-		def http = new HTTPBuilder('http://commuteph-api.herokuapp.com/')
+		def http = new HTTPBuilder('http://api.commute.ph/')
 
 		http.get(path : '/routes/popular/', contentType : TEXT) { resp, reader ->
 			JSON.parse(reader.text).each {
@@ -61,7 +61,7 @@ class WidgetsController {
 	
 	def missing() {
 		def missing = []
-		def http = new HTTPBuilder('http://commuteph-api.herokuapp.com/')
+		def http = new HTTPBuilder('http://api.commute.ph/')
 
 		http.get(path : '/routes/missing/', contentType : TEXT) { resp, reader ->
 			JSON.parse(reader.text).each {
